@@ -48,10 +48,8 @@ const Navbar = () => {
   return (
     <AppBar position="sticky">
       <StyledToobar>
-        <Typography sx={{ display: { xs: "none", sm: "block" } }} variant="h6">
-          instagram
-        </Typography>
-        <Instagram sx={{ display: { xs: "block", sm: "none" } }} />
+        
+        <Instagram sx={{ fontSize: {  md: "40px" } }} />
         <Search>
           <InputBase placeholder="Search..."></InputBase>
         </Search>
