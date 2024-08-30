@@ -4,13 +4,20 @@ import {
   Badge,
   Box,
   InputBase,
+  Menu,
+  MenuItem,
   styled,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Mail, Notifications, Pets } from "@mui/icons-material";
+import { Instagram, Mail, Notifications, } from "@mui/icons-material";
+import React,{ useState } from "react";
 
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+
+
   const StyledToobar = styled(Toolbar)({
     display: "flex",
     justifyContent: "space-between",
@@ -46,7 +53,7 @@ const Navbar = () => {
         <Typography sx={{ display: { xs: "none", sm: "block" } }} variant="h6">
           instagram
         </Typography>
-        <Pets sx={{ display: { xs: "block", sm: "none" } }} />
+        <Instagram sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
           <InputBase placeholder="Search..."></InputBase>
         </Search>
@@ -67,6 +74,24 @@ const Navbar = () => {
           <Typography variant="span">faraz</Typography>
         </UserBox>
       </StyledToobar>
+      <Menu
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                open={open}
+                onClose= {(e)=>setOpen(false)}
+                anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+                }}
+                transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+                }}
+            >
+                <MenuItem>Profile</MenuItem>
+                <MenuItem>My account</MenuItem>
+                <MenuItem>Logout</MenuItem>
+            </Menu>
     </AppBar>
   );
 };
