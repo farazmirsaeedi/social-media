@@ -3,6 +3,8 @@ import Navbar from './Components/Navbar'
 
 function App() {
 
+  const [mode, setMode] = useState("dark");
+
   return (
     <Navbar />
   )
